@@ -1,0 +1,10 @@
+<div *ngIf="employee" class="employees">
+  <h2>{{employee.name | uppercase}} Details</h2>
+  <div><span>Id: </span>{{employee.id}}</div>
+  <div><span>Department: </span>{{employee.department}}</div>
+  <div>
+    <button routerLink="/employee-edit/{{employee._id}}">
+      Edit
+    </button>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div>
+  <h2>Employee Add</h2>
+  <div>
+    <label>Employee Id:
+          <input [(ngModel)]="employeeData.id" placeholder="Employee Id"/>
+        </label><br>
+    <label>Employee Name:
+      <input [(ngModel)]="employeeData.name" placeholder="Employee Name"/>
+    </label><br>
+    <label>Department:
+      <input [(ngModel)]="employeeData.department" placeholder="Department"/>
+    </label><br>
+  </div>
+  <button (click)="addEmployee()">Save</button>
+</div>
