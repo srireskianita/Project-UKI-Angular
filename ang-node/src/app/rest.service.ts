@@ -29,7 +29,6 @@ export class RestService {
   }
 
   addEmployee(employee): Observable<any> {
-    console.log(employee);
     return this.http.post<any>(endpoint + 'employees', JSON.stringify(employee), httpOptions).pipe(
       tap((employee) => console.log(`added employee w/ id=${employee.id}`)),
       catchError(this.handleError<any>('addEmployee'))
@@ -37,9 +36,10 @@ export class RestService {
   }
 
   updateEmployee(id, employee): Observable<any> {
+    console.log(id);
     return this.http.put(endpoint + 'employees/' + id, JSON.stringify(employee), httpOptions).pipe(
-      tap(_ => console.log(`updated product id=${id}`)),
-      catchError(this.handleError<any>('updateProduct'))
+      tap(_ => console.log(`updated employee id=${id}`)),
+      catchError(this.handleError<any>('updateEmployee'))
     );
   }
 

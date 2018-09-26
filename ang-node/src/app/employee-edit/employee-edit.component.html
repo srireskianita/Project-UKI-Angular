@@ -1,15 +1,23 @@
 <div>
   <h2>Employee Edit</h2>
+  <button (click)="router.navigate(['/employees'])" class="backbtn">Back</button>
   <div>
-    <label>Employee Id:
-      <input [(ngModel)]="employeeData.id" placeholder="Employee Id"/>
-    </label><br>
-    <label>Employee Name:
-      <input [(ngModel)]="employeeData.name" placeholder="Employee Name"/>
-    </label><br>
-    <label>Department:
-      <input [(ngModel)]="employeeData.department" placeholder="Department"/>
-    </label><br>
+    <label>Employee ID</label>
+    <br>
+    <input [(ngModel)]="employee.id" placeholder="Employee Id"/>
+    <br>
+    <label>Name</label>
+    <br>
+    <input [(ngModel)]="employee.name" placeholder="Employee Name"/>
+    <br>
+    <label>Department</label>
+    <br>
+    <input [(ngModel)]="employee.department" placeholder="Department"/>
+    <br>
   </div>
-  <button (click)="updateEmployee ()">Update</button>
+  <button (click)="updateEmployee()" class="btn">Save</button>
+  <button (click)="delete(employee._id)" class="btn">Delete</button>
 </div>
+
+
+

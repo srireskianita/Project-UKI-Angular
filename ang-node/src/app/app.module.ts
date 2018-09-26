@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     data: { title: 'Employee Add' }
   },
   {
-    path: 'employee-edit/:id',
+    path: 'employees/:id',
     component: EmployeeEditComponent,
     data: { title: 'Employee Edit' }
   },
@@ -44,7 +44,7 @@ const appRoutes: Routes = [
     EmployeeComponent,
     EmployeeAddComponent,
     EmployeeDetailComponent,
-    EmployeeEditComponent
+    EmployeeEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +55,6 @@ const appRoutes: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent],
-
 
 })
 export class AppModule { }

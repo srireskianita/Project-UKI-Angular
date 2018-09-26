@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EmployeeAddComponent implements OnInit {
 
-  @Input() employeeData = { prod_name:'', prod_desc: '', prod_price: 0 };
+  @Input() employeeData = { id:'', name: '', department: '' };
 
   constructor(public rest:RestService, private route: ActivatedRoute, private router: Router) { }
 
@@ -18,7 +18,7 @@ export class EmployeeAddComponent implements OnInit {
 
   addEmployee() {
     this.rest.addEmployee(this.employeeData).subscribe((result) => {
-      this.router.navigate(['/employee-details/'+result._id]);
+      this.router.navigate(['/employees']);
     }, (err) => {
       console.log(err);
     });

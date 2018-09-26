@@ -1,0 +1,21 @@
+input {
+    color: black;
+    padding: 10px 15px;
+    margin: 8px 0 20px 0;
+    border: 1px solid;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button {
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+    font-family: Arial;
+    font-size: 15px;
+    margin: 0 1em 1em 0; 
+  }

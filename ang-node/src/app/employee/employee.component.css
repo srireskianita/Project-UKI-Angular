@@ -1,53 +1,8 @@
 /* Employees Component's private CSS styles */
 .employees {
-    margin: 0 0 2em 0;
-    list-style-type: none;
+    margin: 0 0 1em 0;
     padding: 0;
-    width: 15em;
-  }
-  .employees li {
-    position: relative;
-    cursor: pointer;
-    background-color: #EEE;
-    margin: .5em;
-    padding: .3em 0;
-    height: 1.6em;
-    border-radius: 4px;
-  }
-  
-  .employees li:hover {
-    color: #607D8B;
-    background-color: #DDD;
-    left: .1em;
-  }
-  
-  .employees a {
-    color: #888;
-    text-decoration: none;
-    position: relative;
-    display: block;
-    width: 250px;
-  }
-  
-  .employees a:hover {
-    color:#607D8B;
-  }
-  
-  .employees .badge {
-    display: inline-block;
-    font-size: small;
-    color: white;
-    padding: 0.8em 0.7em 0 0.7em;
-    background-color: #607D8B;
-    line-height: 1em;
-    position: relative;
-    left: -1px;
-    top: -4px;
-    height: 1.8em;
-    min-width: 16px;
-    text-align: right;
-    margin-right: .8em;
-    border-radius: 4px 0 0 4px;
+    font-size: 30px;
   }
   
   button {
@@ -58,6 +13,8 @@
     cursor: pointer;
     cursor: hand;
     font-family: Arial;
+    font-size: 15px;
+    margin: 0 0 1em 0; 
   }
   
   button:hover {
@@ -66,8 +23,28 @@
   
   button.delete {
     position: relative;
-    left: 194px;
-    top: -32px;
-    background-color: gray !important;
-    color: white;
+    background-color: lightblue;
+    color: black;
+  }
+
+  #employee {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+  #employee td, #employee th {
+      border: 1px solid #ddd;
+      padding: 8px;
+      font-size: 15px;
+  }
+
+  #employee tr:nth-child(odd){background-color: #f2f2f2;}
+
+  #employee th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: grey;
+      color: white;
   }
