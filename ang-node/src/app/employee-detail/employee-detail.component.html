@@ -1,10 +1,19 @@
-<div *ngIf="employee" class="employees">
-  <h2>{{employee.name | uppercase}} Details</h2>
-  <div><span>Id: </span>{{employee.id}}</div>
-  <div><span>Department: </span>{{employee.department}}</div>
-  <div>
-    <button routerLink="/employee-edit/{{employee._id}}">
-      Edit
-    </button>
+<div>
+    <h2>Employee Details</h2>
+   
+    <div>
+      <label>Employee ID</label>
+      <br>
+      <input [(ngModel)]="employee.id" disabled/>
+      <br>
+      <label>Name</label>
+      <br>
+      <input [(ngModel)]="employee.name" disabled/>
+      <br>
+      <label>Department</label>
+      <br>
+      <input [(ngModel)]="employee.department" disabled/>
+      <br>
+    </div>
+    <button (click)="router.navigate(['/employees'])" class="backbtn">Back</button>
   </div>
-</div>

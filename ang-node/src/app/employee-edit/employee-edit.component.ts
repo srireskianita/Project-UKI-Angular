@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { RestService } from '../rest.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EmployeeEditComponent implements OnInit {
 
-  employee:any;
+  @Input() employee:any = { id: '', name: '', department:''};
 
   constructor(public rest:RestService, private route: ActivatedRoute, private router: Router){}
 
@@ -21,16 +21,10 @@ export class EmployeeEditComponent implements OnInit {
     });
   }
 
-  getEmployees() {
-    this.employee = [];
-    this.rest.getEmployees().subscribe((data: {}) => {
-      this.employee = data;
-    });
-  }
-
-  updateEmployee() {
-    this.rest.updateEmployee([this.employee._id], this.employee).subscribe((result) => {
-      console.log(result);
+  updateEmployee(id) {
+    this.rest.updateEmployee(id, this.employee).subscribe((result) => {
+      this.router.navigate(['/employee-details/' + this.employee.id]);
+      console.log('berhasil');
     }, (err) => {
       console.log(err);
     });
@@ -39,7 +33,6 @@ export class EmployeeEditComponent implements OnInit {
   delete(id) {
     this.rest.deleteEmployee(id)
       .subscribe(res => {
-          this.getEmployees();
           this.router.navigate(['/employees']);
         }, (err) => {
           console.log(err);

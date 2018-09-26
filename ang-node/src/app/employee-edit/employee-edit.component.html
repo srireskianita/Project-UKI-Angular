@@ -15,7 +15,7 @@
     <input [(ngModel)]="employee.department" placeholder="Department"/>
     <br>
   </div>
-  <button (click)="updateEmployee()" class="btn">Save</button>
+  <button (click)="updateEmployee(employee._id)" class="btn">Save</button>
   <button (click)="delete(employee._id)" class="btn">Delete</button>
 </div>
 

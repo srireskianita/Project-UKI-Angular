@@ -36,8 +36,12 @@ export class RestService {
   }
 
   updateEmployee(id, employee): Observable<any> {
-    console.log(id);
-    return this.http.put(endpoint + 'employees/' + id, JSON.stringify(employee), httpOptions).pipe(
+    const newEmployee = {
+      id: employee.id,
+      name: employee.name,
+      department: employee.department
+    }
+    return this.http.put(endpoint + 'employees/' + id, JSON.stringify(newEmployee), httpOptions).pipe(
       tap(_ => console.log(`updated employee id=${id}`)),
       catchError(this.handleError<any>('updateEmployee'))
     );
